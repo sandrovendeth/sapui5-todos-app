@@ -1,0 +1,50 @@
+<mvc:View
+    controllerName="com.mycompany.myapp.controller.TodoList"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <VBox class="sapUiNoMargin">
+        <SearchField 
+            id="searchField"
+            placeholder="Pesquisar todos..."
+            search="onSearch"
+            width="100%"
+            class="sapUiMediumMarginBottom"/>
+        
+        <List
+            id="todosList"
+            items="{/}"
+            mode="None"
+            class="sapUiNoMargin">
+            <CustomListItem press="onItemPress" type="Active">
+                <HBox alignItems="Center" justifyContent="SpaceBetween" class="sapUiMediumMargin">
+                    <HBox alignItems="Center" class="sapUiNoMargin">
+                        <core:Icon 
+                            src="{path: 'completed', formatter: '.formatStatusIcon'}"
+                            color="{path: 'completed', formatter: '.formatStatusColor'}"
+                            size="1.5rem"
+                            class="sapUiMediumMarginEnd"
+                            xmlns:core="sap.ui.core"/>
+                        
+                        <VBox class="sapUiNoMargin">
+                            <Text text="{title}" class="sapUiMediumText"/>
+                            <Text text="Usuário: {userId} | ID: {id}" class="sapUiTinyText sapUiContentLabelColor"/>
+                        </VBox>
+                    </HBox>
+                    
+                    <Switch 
+                        state="{completed}" 
+                        customTextOn=" " 
+                        customTextOff=" "
+                        change="onListStatusChange"/>
+                </HBox>
+            </CustomListItem>
+        </List>
+        
+        <MessageStrip
+            id="noDataMessage"
+            text="Nenhum todo encontrado"
+            type="Information"
+            visible="false"
+            class="sapUiMediumMarginTop"/>
+    </VBox>
+</mvc:View>

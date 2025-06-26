@@ -1,0 +1,32 @@
+<mvc:View
+    controllerName="com.mycompany.myapp.controller.TodoDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f">
+    <Page id="detailPage" title="Detalhes do Todo" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <f:Card class="sapUiMediumMarginBottom">
+                    <f:header>
+                        <card:Header title="Informações do Todo" xmlns:card="sap.f.cards"/>
+                    </f:header>
+                    <f:content>
+                        <VBox class="sapUiMediumMargin">
+                            <Label text="ID:" class="sapUiTinyMarginBottom"/>
+                            <Text id="todoId" text="{id}" class="sapUiMediumMarginBottom"/>
+                            
+                            <Label text="Título:" class="sapUiTinyMarginBottom"/>
+                            <Text id="todoTitle" text="{title}" class="sapUiMediumMarginBottom"/>
+                            
+                            <Label text="User ID:" class="sapUiTinyMarginBottom"/>
+                            <Text id="todoUserId" text="{userId}" class="sapUiMediumMarginBottom"/>
+                            
+                            <Label text="Status:" class="sapUiTinyMarginBottom"/>
+                            <Switch id="completedSwitch" state="{completed}" change="onStatusChange"/>
+                        </VBox>
+                    </f:content>
+                </f:Card>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
