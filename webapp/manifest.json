@@ -25,6 +25,37 @@
         "sap.ui.core": {}
       }
     },
-    "models": {}
+    "models": {},
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "com.mycompany.myapp.view",
+        "controlId": "app",
+        "controlAggregation": "pages"
+      },
+      "routes": [
+        {
+          "name": "RouteMain",
+          "pattern": "",
+          "target": ["TargetMain"]
+        },
+        {
+          "name": "RouteDetail",
+          "pattern": "detail/{todoId}",
+          "target": ["TargetDetail"]
+        }
+      ],
+      "targets": {
+        "TargetMain": {
+          "viewType": "XML",
+          "viewName": "TodoList"
+        },
+        "TargetDetail": {
+          "viewType": "XML",
+          "viewName": "TodoDetail"
+        }
+      }
+    }
   }
 }

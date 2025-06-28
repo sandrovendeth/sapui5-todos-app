@@ -1,32 +1,49 @@
 <mvc:View
     controllerName="com.mycompany.myapp.controller.TodoDetail"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m"
-    xmlns:f="sap.f">
-    <Page id="detailPage" title="Detalhes do Todo" showNavButton="true" navButtonPress="onNavBack">
+    xmlns="sap.m">
+    <Page id="detailPage" title="Detalhes da Tarefa" showNavButton="true" navButtonPress="onNavBack">
+        <customHeader>
+            <Bar>
+                <contentLeft>
+                     <Button icon="sap-icon://nav-back" type="Transparent" press="onNavBack"/>
+                    <Image src="./images/brgaap-symbol.png" width="150px" height="40px" class="sapUiTinyMarginEnd"/>
+                </contentLeft>
+                <contentMiddle>
+                    <Title text="Detalhes da Tarefa" level="H1"/>    
+                </contentMiddle>
+            </Bar>
+        </customHeader>
         <content>
             <VBox class="sapUiMediumMargin">
-                <f:Card class="sapUiMediumMarginBottom">
-                    <f:header>
-                        <card:Header title="Informações do Todo" xmlns:card="sap.f.cards"/>
-                    </f:header>
-                    <f:content>
-                        <VBox class="sapUiMediumMargin">
-                            <Label text="ID:" class="sapUiTinyMarginBottom"/>
-                            <Text id="todoId" text="{id}" class="sapUiMediumMarginBottom"/>
-                            
-                            <Label text="Título:" class="sapUiTinyMarginBottom"/>
-                            <Text id="todoTitle" text="{title}" class="sapUiMediumMarginBottom"/>
-                            
-                            <Label text="User ID:" class="sapUiTinyMarginBottom"/>
-                            <Text id="todoUserId" text="{userId}" class="sapUiMediumMarginBottom"/>
-                            
-                            <Label text="Status:" class="sapUiTinyMarginBottom"/>
-                            <Switch id="completedSwitch" state="{completed}" change="onStatusChange"/>
+                <Panel headerText="Informações da Tarefa" class="sapUiMediumMarginBottom">
+                    <VBox class="sapUiMediumMargin">
+                        <HBox alignItems="Center" class="sapUiSmallMarginBottom">
+                            <Label text="ID:" design="Bold" width="80px"/>
+                            <Text id="todoId"/>
+                        </HBox>
+                        <HBox alignItems="Center" class="sapUiSmallMarginBottom">
+                            <Label text="Título:" design="Bold" width="80px"/>
+                            <Text id="todoTitle" maxLines="3"/>
+                        </HBox>
+                        <HBox alignItems="Center" class="sapUiMediumMarginBottom">
+                            <Label text="Usuário:" design="Bold" width="80px"/>
+                            <Text id="todoUser"/>
+                        </HBox>
+                    </VBox>
+                </Panel>
+
+                <Panel headerText="Status da Tarefa">
+                    <HBox alignItems="Center" justifyContent="SpaceBetween" class="sapUiMediumMargin">
+                        <VBox>
+                            <Label text="Tarefa Concluída" design="Bold"/>
+                            <Text text="Deslize o botão para alterar o status da tarefa como concluída ou pendente." class="sapUiTinyText"/>
                         </VBox>
-                    </f:content>
-                </f:Card>
+                        <Switch id="statusSwitch" customTextOn=" " customTextOff=" " change="onStatusChange"/>
+                    </HBox>
+                </Panel>
             </VBox>
         </content>
     </Page>
 </mvc:View>
+

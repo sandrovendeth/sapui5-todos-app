@@ -3,33 +3,8 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m">
-
     <Shell id="shell">
-        <App id="app">
-            <pages>
-                <Page id="page" title="Lista de Todos">
-                    <customHeader>
-                        <Bar>
-                            <contentLeft>
-                                <Image 
-                                    src="./images/brgaap-symbol.png" 
-                                    width="150px" 
-                                    height="40px" 
-                                    class="sapUiTinyMarginEnd"/>
-                            </contentLeft>
-                            <contentMiddle>
-                                <Title text="Lista de Tarefas" level="H1"/>
-                            </contentMiddle>
-                        </Bar>
-                    </customHeader>
-
-                    <content>
-                        <mvc:XMLView 
-                            viewName="com.mycompany.myapp.view.TodoList" 
-                            id="todoListView"/>
-                    </content>
-                </Page>
-            </pages>
-        </App>
+        <App id="app"></App>
     </Shell>
 </mvc:View>
+

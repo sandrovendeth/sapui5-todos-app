@@ -10,7 +10,8 @@ sap.ui.define(
 
       init: function () {
         UIComponent.prototype.init.apply(this, arguments);
-        console.log("Aplicação inicializada com sucesso");
+
+        this.getRouter().initialize();
       },
 
       createContent: function () {
