@@ -13,7 +13,6 @@ sap.ui.define(
 
       _onObjectMatched: function (oEvent) {
         var sTodoId = oEvent.getParameter("arguments").todoId;
-
         this._loadTodoDetails(sTodoId);
       },
 
@@ -59,6 +58,10 @@ sap.ui.define(
         this.byId("todoTitle").setText(oTodo.title);
         this.byId("todoUser").setText("Usuário " + oTodo.userId);
         this.byId("statusSwitch").setState(oTodo.completed);
+
+        this.byId("statusText").setText(this.formatStatusText(oTodo.completed));
+
+        console.log("Detalhes carregados para todo:", oTodo.id);
       },
 
       onStatusChange: function (oEvent) {
@@ -82,6 +85,8 @@ sap.ui.define(
             }
           }
 
+          this.byId("statusText").setText(this.formatStatusText(bNewState));
+
           sap.m.MessageToast.show(
             bNewState
               ? "Tarefa marcada como concluída!"
@@ -89,7 +94,6 @@ sap.ui.define(
           );
         }
       },
-
       onNavBack: function () {
         var oHistory = History.getInstance();
         var sPreviousHash = oHistory.getPreviousHash();
@@ -100,6 +104,10 @@ sap.ui.define(
           var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
           oRouter.navTo("RouteMain");
         }
+      },
+
+      formatStatusText: function (bCompleted) {
+        return bCompleted ? "Tarefa Concluída" : "Tarefa Pendente";
       },
     });
   }

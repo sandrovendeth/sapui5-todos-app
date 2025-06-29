@@ -53,7 +53,7 @@
                                 
                                 <VBox class="sapUiNoMargin">
                                     <Text text="{title}" class="sapUiMediumText"/>
-                                    <Text text="Usuário: {userId} | ID: {id}" class="sapUiTinyText sapUiContentLabelColor"/>
+                                    <!-- <Text text="Usuário: {userId} | ID: {id}" class="sapUiTinyText sapUiContentLabelColor"/> -->
                                 </VBox>
                             </HBox>
                             

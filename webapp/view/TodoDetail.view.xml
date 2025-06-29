@@ -36,8 +36,8 @@
                 <Panel headerText="Status da Tarefa">
                     <HBox alignItems="Center" justifyContent="SpaceBetween" class="sapUiMediumMargin">
                         <VBox>
-                            <Label text="Tarefa Concluída" design="Bold"/>
-                            <Text text="Deslize o botão para alterar o status da tarefa como concluída ou pendente." class="sapUiTinyText"/>
+                          <Label id="statusText" text="{path: 'completed', formatter: '.formatStatusText'}" design="Bold"/>
+                          <Text text="Use o controle para alterar o status" />
                         </VBox>
                         <Switch id="statusSwitch" customTextOn=" " customTextOff=" " change="onStatusChange"/>
                     </HBox>
