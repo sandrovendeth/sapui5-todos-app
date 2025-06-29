@@ -4,8 +4,6 @@
 
 Este projeto é uma aplicação web desenvolvida com o framework SAPUI5, que permite gerenciar uma lista de tarefas (todos). A aplicação consome dados de uma API pública e oferece funcionalidades de pesquisa, filtragem por status, visualização de detalhes e alteração do status de conclusão das tarefas.
 
-O objetivo principal foi adaptar um exemplo da documentação oficial do SAPUI5 para buscar dados de uma API externa e implementar requisitos específicos, como navegação entre páginas e um controle apropriado para o campo `completed`.
-
 ## Como Executar o Projeto Localmente
 
 Para rodar esta aplicação em seu ambiente local, siga os passos abaixo:
